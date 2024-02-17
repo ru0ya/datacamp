@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House Prediction</title>
+    <link rel="stylesheet" href="../static/styles/styles.css">
+</head>
+<body>
+    <h2 class="the_header">Property Information Form</h2>
+    <div class="form_position">
+        <form action="/house_prediction" method="POST" class="main_form">
+            <div>
+                <label for="house_type">House Type:</label><br>
+                <input type="text" id="location" name="location" placeholder="Enter location">
+
+            <div>
+                <label for="location">Location:</label><br>
+                <input type="text" id="location" name="location" placeholder="Enter location">
+            </div>
+            <br>
+            <div>
+                <label for="no_bedrooms">Number of Bedrooms:</label><br>
+                <input type="number" id="no_bedrooms" name="no_bedrooms" placeholder="Enter number of bedrooms">
+            </div>
+            <br>
+            <div>
+                <label for="gym">Gym:</label><br>
+                <input type="radio" id="gym_yes" name="gym" value="yes">
+                <label for="gym_yes">Yes</label>
+                <input type="radio" id="gym_no" name="gym" value="no">
+                <label for="gym_no">No</label>
+            </div>
+            <br>
+            <div>
+                <label for="pool">Pool:</label><br>
+                <input type="radio" id="pool_yes" name="pool" value="yes">
+                <label for="pool_yes">Yes</label>
+                <input type="radio" id="pool_no" name="pool" value="no">
+                <label for="pool_no">No</label>
+            </div>
+            <br>
+            <div>
+                <label for="back_up_generator">Back-up Generator:</label><br>
+                <input type="radio" id="back_up_generator_yes" name="back_up_generator" value="yes">
+                <label for="back_up_generator_yes">Yes</label>
+                <input type="radio" id="back_up_generator_no" name="back_up_generator" value="no">
+                <label for="back_up_generator_no">No</label>
+            </div>
+            <br>
+            <div>
+                <label for="Dsq">Dsq:</label><br>
+                <input type="radio" id="Dsq_yes" name="Dsq" value="yes">
+                <label for="Dsq_yes">Yes</label>
+                <input type="radio" id="Dsq_no" name="Dsq" value="no">
+                <label for="Dsq_no">No</label>
+            </div>
+            <br>
+            <div>
+                <label for="en_suite">En-suite:</label><br>
+                <input type="radio" id="en_suite_yes" name="en_suite" value="yes">
+                <label for="en_suite_yes">Yes</label>
+                <input type="radio" id="en_suite_no" name="en_suite" value="no">
+                <label for="en_suite_no">No</label>
+            </div>
+            <br>
+            <div>
+                <label for="garden">Garden:</label><br>
+                <input type="radio" id="garden_yes" name="garden" value="yes">
+                <label for="garden_yes">Yes</label>
+                <input type="radio" id="garden_no" name="garden" value="no">
+                <label for="garden_no">No</label>
+            </div>
+            <br>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <div>
+        {% if prediction %}
+            <em><p>The estimated house price is: </p></em>
+            <em><p>{{ prediction }}</p></em>      
+        {% endif %}
+    </div>
+    
+</body>
+
+</html>
